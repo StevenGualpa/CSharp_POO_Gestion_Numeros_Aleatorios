@@ -16,5 +16,13 @@ namespace GestionNumerosAleatorios
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            CsMitadcuadrado cs=new CsMitadcuadrado();
+            string mensaje = cs.Mensaje();
+            MessageBox.Show("Titulo",mensaje); 
+        }
     }
 }
