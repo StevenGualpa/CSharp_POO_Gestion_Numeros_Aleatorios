@@ -9,11 +9,9 @@ namespace GestionNumerosAleatorios
 {
     internal class CsFibonnacci
     {
-
         private long lastNumber;
         private long currentNumber;
         private int cantidad;
-
         public long LastNumber 
         { get => lastNumber; 
           set => lastNumber = value; 
@@ -27,7 +25,6 @@ namespace GestionNumerosAleatorios
             get => cantidad;
             set => cantidad = value;
         }
-
         public CsFibonnacci() 
         { 
         
@@ -39,8 +36,6 @@ namespace GestionNumerosAleatorios
             Cantidad = cantidad;
 
         }
-
-
         public long NextRandomNumber()
         {
             long nextNumber = (LastNumber + CurrentNumber) % long.MaxValue;
@@ -50,7 +45,6 @@ namespace GestionNumerosAleatorios
 
             return nextNumber;
         }
-
         public long[] Generacion()
         {
             long[] generacion = new long[cantidad];
@@ -62,9 +56,5 @@ namespace GestionNumerosAleatorios
             return generacion;
         
         }
-
-
-
-
     }
 }

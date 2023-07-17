@@ -20,9 +20,9 @@ namespace GestionNumerosAleatorios
         private void Form1_Load(object sender, EventArgs e)
         {
 
-            CsMitadcuadrado cs=new CsMitadcuadrado();
+            CsMitadcuadrado cs=new CsMitadcuadrado(30,8907);
             string mensaje = cs.Mensaje();
-            MessageBox.Show("Titulo",mensaje); 
+            MessageBox.Show(mensaje,"Titulo"); 
         }
     }
 }
