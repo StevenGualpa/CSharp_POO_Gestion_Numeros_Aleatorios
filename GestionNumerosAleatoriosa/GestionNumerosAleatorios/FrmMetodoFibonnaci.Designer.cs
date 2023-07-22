@@ -36,7 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Txt_Semilla01 = new System.Windows.Forms.TextBox();
-            this.Txt_Semilla02 = new System.Windows.Forms.TextBox();
+            this.Txt_c = new System.Windows.Forms.TextBox();
             this.Btn_Guardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -111,12 +111,12 @@
             this.Txt_Semilla01.Size = new System.Drawing.Size(100, 22);
             this.Txt_Semilla01.TabIndex = 7;
             // 
-            // Txt_Semilla02
+            // Txt_c
             // 
-            this.Txt_Semilla02.Location = new System.Drawing.Point(93, 152);
-            this.Txt_Semilla02.Name = "Txt_Semilla02";
-            this.Txt_Semilla02.Size = new System.Drawing.Size(100, 22);
-            this.Txt_Semilla02.TabIndex = 8;
+            this.Txt_c.Location = new System.Drawing.Point(93, 152);
+            this.Txt_c.Name = "Txt_c";
+            this.Txt_c.Size = new System.Drawing.Size(100, 22);
+            this.Txt_c.TabIndex = 8;
             // 
             // Btn_Guardar
             // 
@@ -134,7 +134,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 407);
             this.Controls.Add(this.Btn_Guardar);
-            this.Controls.Add(this.Txt_Semilla02);
+            this.Controls.Add(this.Txt_c);
             this.Controls.Add(this.Txt_Semilla01);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -162,7 +162,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Txt_Semilla01;
-        private System.Windows.Forms.TextBox Txt_Semilla02;
+        private System.Windows.Forms.TextBox Txt_c;
         private System.Windows.Forms.Button Btn_Guardar;
     }
 }

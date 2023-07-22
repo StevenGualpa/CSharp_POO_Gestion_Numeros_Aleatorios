@@ -57,6 +57,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCongruencialMixto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCongruencialMixto.Designer.cs">
+      <DependentUpon>FrmCongruencialMixto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCroguencialMultiplicativo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCroguencialMultiplicativo.Designer.cs">
+      <DependentUpon>FrmCroguencialMultiplicativo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMetodoFibonnaci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +85,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCongruencialMixto.resx">
+      <DependentUpon>FrmCongruencialMixto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCroguencialMultiplicativo.resx">
+      <DependentUpon>FrmCroguencialMultiplicativo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMetodoFibonnaci.resx">
       <DependentUpon>FrmMetodoFibonnaci.cs</DependentUpon>

@@ -16,7 +16,7 @@ namespace GestionNumerosAleatorios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMetodoFibonnaci());
+            Application.Run(new FrmCongruencialMixto());
         }
     }
 }

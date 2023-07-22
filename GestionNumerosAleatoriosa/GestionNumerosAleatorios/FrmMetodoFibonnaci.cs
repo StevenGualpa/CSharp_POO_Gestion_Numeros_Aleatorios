@@ -28,7 +28,7 @@ namespace GestionNumerosAleatorios
         {
             string semilla=Txt_GenerarAleatorios.Text;
             string x0=Txt_Semilla01.Text;
-            string x1=Txt_Semilla02.Text;
+            string x1=Txt_c.Text;
             CsAuxiliares axu = new CsAuxiliares();
             CsFibonnacci fibonnacci;
             if (axu.ValidarInt(semilla))
