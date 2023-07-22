@@ -61,7 +61,7 @@ namespace GestionNumerosAleatorios
                 string medio = cuadradoCadena.Substring(numDigitos / 2, numDigitos);
                 
 
-                //Almacenamos los Datos
+                //Almacenamos los Datos, aunque solo usaremos r para la Validacion
                 Serie[i]=(i+1).ToString();
                 x1[i]=Semilla.ToString();
                 xx[i] = cuadrado.ToString();
