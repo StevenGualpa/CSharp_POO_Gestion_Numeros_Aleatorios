@@ -48,22 +48,11 @@ namespace GestionNumerosAleatorios
 
             return nextNumber;
         }
-        public double[] Generacion()
-        {
-            double[] generacion = new double[cantidad];
-            for (int i = 0; i < cantidad; i++)
-            {
-             
-                double numeroAleatorio = NextRandomNumber();
-
-                generacion[i] = numeroAleatorio / cantidad;
-            }
-            return generacion;
-        }
 
         public DataGridView Generacion(DataGridView dataGridView)
         {
-            dataGridView= Generar_Columnas_Filas(dataGridView);
+            CsAuxiliares auxiliares = new CsAuxiliares();
+            dataGridView= auxiliares.Generar_Columnas_Filas(dataGridView,Cantidad,4);
             for (int i = 0; i < Cantidad; i++)
             {
                 dataGridView[0, i].Value = (i+1).ToString();
@@ -75,48 +64,5 @@ namespace GestionNumerosAleatorios
             return dataGridView;
         }
 
-
-
-
-        private DataGridView Generar_Columnas_Filas(DataGridView dataGridView)
-        {
-            DataGridViewTextBoxColumn coltext;
-            string nam = "C";
-            if (dataGridView.ColumnCount == 0)
-            {
-                dataGridView.RowCount = Cantidad;
-                for (int i = 0; i < 4; i++)
-                {
-                    coltext = new DataGridViewTextBoxColumn();
-                    coltext.Name = (nam + i.ToString());
-                    dataGridView.Columns.Add(coltext);
-                }
-            }
-            else
-            {
-                Limpiar_DataGridView(dataGridView);
-                dataGridView.RowCount = Cantidad;
-                for (int i = 0; i < 4; i++)
-                {
-                    coltext = new DataGridViewTextBoxColumn();
-                    coltext.Name = (nam + i.ToString());
-                    dataGridView.Columns.Add(coltext);
-                }
-            }
-            dataGridView.Columns.RemoveAt(0);
-            dataGridView.ColumnHeadersVisible = false;
-            dataGridView.RowHeadersVisible = false;
-            return dataGridView;
-        }
-
-        void Limpiar_DataGridView(DataGridView dataGridView)
-        {
-            int numcl = 1;
-            for (int i = 0; i < numcl; i++)
-            {
-                dataGridView.Columns.RemoveAt(0);
-            }
-            dataGridView.Rows.Clear();
-        }
     }
 }

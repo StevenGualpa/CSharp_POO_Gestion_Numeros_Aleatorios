@@ -63,6 +63,12 @@
     <Compile Include="FrmMetodoFibonnaci.Designer.cs">
       <DependentUpon>FrmMetodoFibonnaci.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMitadCuadrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMitadCuadrado.Designer.cs">
+      <DependentUpon>FrmMitadCuadrado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMetodoFibonnaci.resx">
       <DependentUpon>FrmMetodoFibonnaci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMitadCuadrado.resx">
+      <DependentUpon>FrmMitadCuadrado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

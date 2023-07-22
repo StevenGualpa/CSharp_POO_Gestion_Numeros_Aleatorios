@@ -49,11 +49,48 @@ namespace GestionNumerosAleatorios
         }
 
 
-        public DataGridView Llenar()
-        { 
-            DataGridView dgv=new DataGridView();
-            return dgv;
+
+        public DataGridView Generar_Columnas_Filas(DataGridView dataGridView,int Cantidad,int Columnas)
+        {
+            DataGridViewTextBoxColumn coltext;
+            string nam = "C";
+            if (dataGridView.ColumnCount == 0)
+            {
+                dataGridView.RowCount = Cantidad;
+                for (int i = 0; i < Columnas; i++)
+                {
+                    coltext = new DataGridViewTextBoxColumn();
+                    coltext.Name = (nam + i.ToString());
+                    dataGridView.Columns.Add(coltext);
+                }
+            }
+            else
+            {
+                Limpiar_DataGridView(dataGridView, Columnas);
+                dataGridView.RowCount = Cantidad;
+                for (int i = 0; i < Columnas; i++)
+                {
+                    coltext = new DataGridViewTextBoxColumn();
+                    coltext.Name = (nam + i.ToString());
+                    dataGridView.Columns.Add(coltext);
+                }
+            }
+            dataGridView.Columns.RemoveAt(0);
+            dataGridView.ColumnHeadersVisible = false;
+            dataGridView.RowHeadersVisible = false;
+            return dataGridView;
         }
+
+        void Limpiar_DataGridView(DataGridView dataGridView,int Columnas)
+        {
+            int numcl = 1;
+            for (int i = 0; i < Columnas; i++)
+            {
+                dataGridView.Columns.RemoveAt(0);
+            }
+            dataGridView.Rows.Clear();
+        }
+
 
     }
 }
