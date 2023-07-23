@@ -64,26 +64,6 @@ namespace GestionNumerosAleatorios
             }
         }
 
-        public double [] ExtraerDatos()
-        {
-            CsAuxiliares csAuxiliares = new CsAuxiliares();
-            string[] lineas = File.ReadAllLines(csAuxiliares.Obtenerruta());
-            double[] valores= new double[lineas.Length];
-            for (int i = 0; i < lineas.Length; i++)
-            {
-                if (double.TryParse(lineas[i], out double numero))
-                {
-                    valores[i] = numero;
-                }
-                else
-                {
-                    // Manejar el caso en el que la línea no pueda ser convertida a double
-                    MessageBox.Show("La línea " + i.ToString() + ", no sigue el formato correcto");
-                }
-            }
-            return valores;
-        }
-
 
         public void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
@@ -150,11 +130,58 @@ namespace GestionNumerosAleatorios
                     new SolidBrush(Color.Black), xTexto, yTexto);
             }
             yTexto += fonText.GetHeight() + 5;
+            yTexto += fonText.GetHeight() + 5;
             e.Graphics.DrawLine(new Pen(Color.Black), xEncabezado, yTexto, e.MarginBounds.Right, yTexto);
+            bool var = MediayVarianza(datos);
+            e.Graphics.DrawLine(new Pen(Color.Black), xEncabezado, yTexto, e.MarginBounds.Right, yTexto);
+            yTexto += fonText.GetHeight() + 5;
+            yTexto += fonText.GetHeight() + 5;
+            e.Graphics.DrawString("Prueba de Media Y Varianza", fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            yTexto += fonText.GetHeight() + 5;
+            yTexto += fonText.GetHeight() + 5;
+
+
+            e.Graphics.DrawString("Promedio: " + Promedio, fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+
+            yTexto += fonText.GetHeight() + 5;
+            e.Graphics.DrawString("Promedio esperado: 0.5", fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            yTexto += fonText.GetHeight() + 5;
+            if (Math.Abs((Promedio - 0.5) / Promedio) < 0.05)
+            {
+                e.Graphics.DrawString("Promedio observado es bastante cercano al promedio esperado, por ende pasa la prueba", fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            }
+            else
+            {
+                e.Graphics.DrawString("Promedio observado difiere bastante del promedio esperado. No pasa la prueba", fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            }
+            yTexto += fonText.GetHeight() + 5;
+
+                        
+            e.Graphics.DrawString("Varianza: " + Varianza, fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            yTexto += fonText.GetHeight() + 5;
+            e.Graphics.DrawString("Varianza esperada: " + Varianzaesperada, fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            yTexto += fonText.GetHeight() + 5;
+            if (Math.Abs(Varianza - (1.0 / 12.0)) < 0.05)
+            {
+                e.Graphics.DrawString("La secuencia pasa la prueba de varianza.", fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            }
+            else
+            {
+                e.Graphics.DrawString("La secuencia no pasa la prueba de varianza.", fonText, new SolidBrush(Color.Black), xTexto, yTexto);
+            }
+            yTexto += fonText.GetHeight() + 5;
+            e.Graphics.DrawLine(new Pen(Color.Black), xEncabezado, yTexto, e.MarginBounds.Right, yTexto);
+
 
         }
 
-        private double valorreal, valorchi;
+
+
+
+
+
+        //Metodos Validacion
+        private double valorreal, valorchi, Varianza, Varianzaesperada, Promedio;
 
         bool ChiCuadrado(double[] data)
         {
@@ -191,5 +218,45 @@ namespace GestionNumerosAleatorios
             }
         }
 
+
+        bool MediayVarianza(double[] data)
+        {
+            double sum = 0;
+            for (int i = 0; i < data.Length; i++)
+            {
+                sum += data[i];
+            }
+
+            double sampleMean = sum / data.Length;
+
+            double sumOfSquares = 0;
+            for (int i = 0; i < data.Length; i++)
+            {
+                sumOfSquares += Math.Pow(data[i] - sampleMean, 2);
+            }
+
+            double sampleVariance = sumOfSquares / (data.Length - 1);
+
+            Promedio = sampleMean;
+            Varianza = sampleVariance;
+            Varianzaesperada = 0.08333;
+            Console.WriteLine("Media de la muestra = {0}", sampleMean);
+            Console.WriteLine("Media esperada = 0.5");
+            Console.WriteLine("Varianza de la muestra = {0}", sampleVariance);
+            Console.WriteLine("Varianza esperada = 0.08333");
+
+            if (Math.Abs(sampleVariance - (1.0 / 12.0)) < 0.05)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+
+
+
+        }
     }
 }
