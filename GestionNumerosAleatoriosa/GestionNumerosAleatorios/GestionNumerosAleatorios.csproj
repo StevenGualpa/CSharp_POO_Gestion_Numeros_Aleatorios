@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CsAuxiliares.cs" />
+    <Compile Include="CsChiCuadrado.cs" />
     <Compile Include="CsCongruencialMixto.cs" />
     <Compile Include="CsCongruencialMultiplicativo.cs" />
     <Compile Include="CsFibonnacci.cs" />
+    <Compile Include="csMediaVarianza.cs" />
     <Compile Include="CsMitadcuadrado.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
