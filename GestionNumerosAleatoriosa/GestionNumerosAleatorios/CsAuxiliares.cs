@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +14,8 @@ namespace GestionNumerosAleatorios
              
         public CsAuxiliares() { }
 
+
+        //Validar Valores Numericos
         public bool ValidarInt(string valor) 
         {
             try {
@@ -49,6 +53,8 @@ namespace GestionNumerosAleatorios
         }
 
 
+
+        //Manejo de DataGridViews
 
         public DataGridView Generar_Columnas_Filas(DataGridView dataGridView,int Cantidad,int Columnas)
         {
@@ -91,6 +97,65 @@ namespace GestionNumerosAleatorios
             dataGridView.Rows.Clear();
         }
 
+
+        //Metodo Para Guardar
+        public string Crearruta()
+        {
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt";
+            saveFileDialog.Title = "Guardar archivo de texto";
+            saveFileDialog.CheckFileExists = false;
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                return saveFileDialog.FileName;
+            }
+            else
+            { return "error"; }
+        }
+
+        public void Guardar(DataGridView dataGridView, int celda) 
+        {
+            if (dataGridView.RowCount != 0)
+            {
+                string ruta= Crearruta();
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(ruta))
+                    {
+                        for (int i = 0; i < dataGridView.Rows.Count; i++)
+                        {
+                            string linea = dataGridView.Rows[i].Cells[celda].Value.ToString();
+                            writer.WriteLine(linea);
+                        }
+                    }
+                }
+                catch
+                {
+
+                }
+
+            }
+            else { MessageBox.Show("No existen números Pseudoaleatorios"); }
+        }
+
+        //Metodo Para Leer
+        private string Obtenerruta()
+        {
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt";
+            openFileDialog.Title = "Seleccionar archivo de texto";
+            openFileDialog.CheckFileExists = true;
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                return openFileDialog.FileName;
+            }
+            else
+            { return "error"; }
+        }
 
     }
 }

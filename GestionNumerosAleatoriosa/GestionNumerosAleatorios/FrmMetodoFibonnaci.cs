@@ -61,7 +61,8 @@ namespace GestionNumerosAleatorios
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-
+            CsAuxiliares auxiliares = new CsAuxiliares();
+            auxiliares.Guardar(dataGridView1,3);
         }
 
 

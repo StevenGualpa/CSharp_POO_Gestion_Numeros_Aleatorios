@@ -50,6 +50,7 @@ namespace GestionNumerosAleatorios
             dataGridView = auxiliares.Generar_Columnas_Filas(dataGridView,Cantidad,5);
             for (int i = 0; i < Cantidad; i++)
             {
+
                 int numDigitos = Semilla.ToString().Length;
                 // Calcular el cuadrado de la semilla
                 int cuadrado = Semilla * Semilla;

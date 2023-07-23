@@ -63,48 +63,10 @@ namespace GestionNumerosAleatorios
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.RowCount != 0)
-            {
-                buscaruta();
-                try
-                {
-                    using (StreamWriter escritor = new StreamWriter(rutaArchivo))
-                    {
-                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                        {
-                            string linea = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                            escritor.WriteLine(linea);
-                        }
-                    }
-                }
-                catch
-                {
-
-                }
-
-            }
-            else { MessageBox.Show("No existen números Pseudoaleatorios"); }
+            CsAuxiliares auxiliares = new CsAuxiliares();
+            auxiliares.Guardar(dataGridView1, 2);
         }
 
-        public void buscaruta()
-        {
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt";
-            saveFileDialog.Title = "Guardar archivo de texto";
-            saveFileDialog.CheckFileExists = false;
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                // Obtener la ruta y el nombre de archivo seleccionados
-                rutaArchivo = saveFileDialog.FileName;
-
-                // Crear el archivo y guardar líneas de texto en el bucle
-
-            }
-
-
-
-        }
+    
     }
 }

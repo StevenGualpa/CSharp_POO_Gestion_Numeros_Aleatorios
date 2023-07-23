@@ -43,5 +43,11 @@ namespace GestionNumerosAleatorios
                 MessageBox.Show("Ingrese solo Numeros");
             }
         }
+
+        private void Btn_Guardar_Click(object sender, EventArgs e)
+        {
+            CsAuxiliares auxiliares = new CsAuxiliares();
+            auxiliares.Guardar(dataGridView1, 2);
+        }
     }
 }
