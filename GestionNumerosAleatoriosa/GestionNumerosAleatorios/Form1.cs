@@ -22,5 +22,30 @@ namespace GestionNumerosAleatorios
 
           
         }
+
+        private void Btn_MitadCuadrado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Fibonacci_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Multiplicativo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Mixto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_Cargar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
