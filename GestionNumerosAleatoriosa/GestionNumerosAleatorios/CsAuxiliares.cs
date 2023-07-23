@@ -141,7 +141,7 @@ namespace GestionNumerosAleatorios
         }
 
         //Metodo Para Leer
-        private string Obtenerruta()
+        public string Obtenerruta()
         {
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -155,6 +155,25 @@ namespace GestionNumerosAleatorios
             }
             else
             { return "error"; }
+        }
+
+        public double[] ExtraerDatos()
+        {
+            string[] lineas = File.ReadAllLines(Obtenerruta());
+            double[] valores = new double[lineas.Length];
+            for (int i = 0; i < lineas.Length; i++)
+            {
+                if (double.TryParse(lineas[i], out double numero))
+                {
+                    valores[i] = numero;
+                }
+                else
+                {
+                    // Manejar el caso en el que la línea no pueda ser convertida a double
+                    MessageBox.Show("La línea " + i.ToString() + ", no sigue el formato correcto");
+                }
+            }
+            return valores;
         }
 
     }
