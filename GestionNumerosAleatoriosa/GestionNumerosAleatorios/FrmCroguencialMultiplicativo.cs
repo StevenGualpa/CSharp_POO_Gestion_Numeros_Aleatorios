@@ -16,5 +16,32 @@ namespace GestionNumerosAleatorios
         {
             InitializeComponent();
         }
+
+        private void FrmCroguencialMultiplicativo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_GenerarAleatorios_Click(object sender, EventArgs e)
+        {
+            string semilla = Txt_GenerarAleatorios.Text;
+            string x0 = Txt_Semilla01.Text;
+            string a = Txt_a.Text;
+            string m = Txt_m.Text;
+            CsAuxiliares auxiliares = new CsAuxiliares();
+            if (auxiliares.ValidarInt(semilla)
+                && auxiliares.ValidarInt(x0)
+                && auxiliares.ValidarInt(a)
+                && auxiliares.ValidarInt(m))
+            {
+                CsCongruencialMultiplicativo csCongruencialMultiplicativo = new CsCongruencialMultiplicativo(Convert.ToInt32(a),
+                    Convert.ToInt32(m), Convert.ToInt32(x0), Convert.ToInt32(semilla));
+                dataGridView1 = csCongruencialMultiplicativo.Generacion(dataGridView1);
+            }
+            else
+            {
+                MessageBox.Show("Ingrese solo Numeros");
+            }
+        }
     }
 }

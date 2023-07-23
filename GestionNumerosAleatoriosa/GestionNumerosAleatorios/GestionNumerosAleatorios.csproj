@@ -81,6 +81,12 @@
     <Compile Include="FrmMitadCuadrado.Designer.cs">
       <DependentUpon>FrmMitadCuadrado.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmValidar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmValidar.Designer.cs">
+      <DependentUpon>FrmValidar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

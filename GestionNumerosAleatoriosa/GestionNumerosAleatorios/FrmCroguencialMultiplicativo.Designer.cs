@@ -117,6 +117,7 @@
             this.Btn_GenerarAleatorios.TabIndex = 17;
             this.Btn_GenerarAleatorios.Text = "Generar";
             this.Btn_GenerarAleatorios.UseVisualStyleBackColor = true;
+            this.Btn_GenerarAleatorios.Click += new System.EventHandler(this.Btn_GenerarAleatorios_Click);
             // 
             // Txt_GenerarAleatorios
             // 
@@ -163,6 +164,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "FrmCroguencialMultiplicativo";
             this.Text = "FrmCroguencialMultiplicativo";
+            this.Load += new System.EventHandler(this.FrmCroguencialMultiplicativo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

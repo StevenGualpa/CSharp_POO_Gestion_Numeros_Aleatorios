@@ -47,11 +47,8 @@ namespace GestionNumerosAleatorios
             {
                 dataGridView[0, i].Value = (i + 1).ToString();
                 dataGridView[1, i].Value = (X01).ToString();
-
                 double aux = CongruencialMixto();
                 dataGridView[2, i].Value = (aux).ToString();
-
-
             }
             return dataGridView;
         }
